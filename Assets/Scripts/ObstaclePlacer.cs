@@ -12,11 +12,11 @@ public class ObstaclePlacer : MonoBehaviour
        SpawnObstacle();  
    }
    void Update(){
-       if(Player.position.z > spawnedObstacle[spawnedObstacle.Count-1].End.localPosition.z){
+       if(Player.position.z > (spawnedObstacle[spawnedObstacle.Count-1].End.position.z - 25)){
             SpawnObstacle();
-            Debug.Log("yes");
+        //    Debug.Log("yes");
        }
-       Debug.Log("----");
+      // Debug.Log("----");
    }
 
    private void SpawnObstacle(){
