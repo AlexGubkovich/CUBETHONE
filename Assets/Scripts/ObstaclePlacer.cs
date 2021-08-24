@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public class ObstaclePlacer : MonoBehaviour
 {
+    public Transform END;
    public Transform Player;
    public Obstacle[] ObstaclePrefabs;
    public Obstacle FirstObstacle;
@@ -12,11 +13,11 @@ public class ObstaclePlacer : MonoBehaviour
        SpawnObstacle();  
    }
    void Update(){
-       if(Player.position.z > (spawnedObstacle[spawnedObstacle.Count-1].End.position.z - 25)){
+       if((Player.position.z > (spawnedObstacle[spawnedObstacle.Count-1].End.position.z - 25)) && Player.position.z < END.position.z-80){
             SpawnObstacle();
-        //    Debug.Log("yes");
+            Debug.Log("yes");
        }
-      // Debug.Log("----");
+      
    }
 
    private void SpawnObstacle(){
